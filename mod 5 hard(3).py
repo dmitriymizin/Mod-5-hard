@@ -57,7 +57,7 @@ class UrTube:
         for video in self.videos:
             if video.title == name_video:
                 video_found = True
-                if self.current_user.age < 18:
+                if self.current_user.age < 18 and video.adult_mode:
                     print('Вам нет 18 лет, пожалуйста покиньте страницу')
                     return
                 for _time in range(1, video.duration + 1):
